@@ -1,6 +1,6 @@
 import { colors } from "@/styles/colors";
 import { ReactNode } from "react";
-import { TextInput, View, TextInputProps } from "react-native";
+import { TextInput, TextInputProps, View } from "react-native";
 
 type InputProps = {
   children: ReactNode;

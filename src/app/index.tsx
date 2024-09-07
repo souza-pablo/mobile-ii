@@ -1,8 +1,8 @@
 import { Input } from "@/components/input";
-import { View, Image } from "react-native";
+import { Image, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
-import { ButtonComponent } from "@/components/button";
+import { Button } from "@/components/button";
 import { Link } from "expo-router";
 
 export default function Index() {
@@ -22,7 +22,9 @@ export default function Index() {
           />
           <Input.Field placeholder="Código do Ingresso" />
         </Input>
-        <ButtonComponent title="ACESSAR CREDENCIAL" />
+        <Button>
+          <Button.Title>ACESSAR CREDENCIAL</Button.Title>
+        </Button>
       </View>
       <Link className="text-zinc-200" href="/register">
         Ainda não possui ingresso?

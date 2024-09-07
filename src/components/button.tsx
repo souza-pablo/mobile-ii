@@ -1,36 +1,27 @@
-import { colors } from "@/styles/colors";
-import { ReactNode } from "react";
-import { View, Button, StyleSheet, Pressable, Text } from "react-native";
+import {
+  Text,
+  TextProps,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native";
 
-type ButtonProps = {
-  title: string;
-};
+type ButtonProps = TouchableOpacityProps & {};
 
-export function ButtonComponent({ title }: ButtonProps) {
+function Button({ children, ...rest }: ButtonProps) {
   return (
-    <View>
-      <Pressable style={styles.button}>
-        <Text style={styles.text}>{title}</Text>
-      </Pressable>
-    </View>
+    <TouchableOpacity
+      className="w-full h-11 flex-row items-center justify-center rounded-lg gap-2 bg-orange-500"
+      {...rest}
+    >
+      {children}
+    </TouchableOpacity>
   );
 }
 
-const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: colors.orange[500],
-  },
-  text: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: "bold",
-    letterSpacing: 0.25,
-    color: colors.green[500],
-  },
-});
+function Title({ children }: TextProps) {
+  return <Text className="text-green-500">{children}</Text>;
+}
+
+Button.Title = Title;
+
+export { Button };

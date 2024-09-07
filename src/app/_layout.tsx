@@ -3,17 +3,17 @@ import { View, StatusBar } from "react-native";
 import { Slot } from "expo-router";
 import {
   useFonts,
-  Inter_500Medium,
-  Inter_400Regular,
-  Inter_600SemiBold,
-} from "@expo-google-fonts/inter";
+  Roboto_700Bold,
+  Roboto_500Medium,
+  Roboto_400Regular,
+} from "@expo-google-fonts/roboto";
 import { Loading } from "@/components/loading";
 
 export default function Layout() {
   const [fontsLoaded] = useFonts({
-    Inter_500Medium,
-    Inter_400Regular,
-    Inter_600SemiBold,
+    Roboto_700Bold,
+    Roboto_500Medium,
+    Roboto_400Regular,
   });
 
   if (!fontsLoaded) {
@@ -21,12 +21,8 @@ export default function Layout() {
   }
 
   return (
-    <View className="flex-1 bg-zinc-950">
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
+    <View className="flex-1 bg-green-500">
+      <StatusBar barStyle="dark-content" backgroundColor="black" translucent />
       <Slot />
     </View>
   );
